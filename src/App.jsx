@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Smartphone, Gamepad2, X } from 'lucide-react'
+import logoWhite from './assets/CMORE_logo_white.svg'
 
 function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
@@ -8,7 +9,9 @@ function App() {
     <div className="min-h-screen bg-black text-white">
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/70 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold tracking-tight">CMORE</a>
+          <a href="#" className="flex items-center">
+            <img src={logoWhite} alt="CMORE" className="h-6" />
+          </a>
           <div className="flex items-center gap-8">
             <a href="#about" className="text-sm text-gray-400 hover:text-white transition-colors">About</a>
             <a href="#projects" className="text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
@@ -72,7 +75,7 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h3 className="text-xl font-bold mb-4">CMORE</h3>
+              <img src={logoWhite} alt="CMORE" className="h-5 mb-4" />
               <p className="text-gray-400 text-sm leading-relaxed">
                 Mobile app & game development studio.<br />
                 See more, create more.
