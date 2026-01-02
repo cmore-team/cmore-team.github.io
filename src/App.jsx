@@ -23,7 +23,7 @@ function App() {
       <section id="about" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
         <div className="text-center max-w-3xl">
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-widest text-gray-400 border border-white/20 rounded-full">
-            EST. 2026
+            EST. 2025
           </span>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
@@ -119,7 +119,7 @@ function App() {
               </button>
             </div>
             <div className="p-6 text-gray-400 text-sm leading-relaxed space-y-4">
-              <p><strong className="text-white">Effective Date:</strong> January 2026</p>
+              <p><strong className="text-white">Effective Date:</strong> January 2025</p>
               <p>
                 CMORE ("we", "our", or "us") is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, and safeguard your information
