@@ -101,7 +101,7 @@ function App() {
             </div>
           </div>
           <div className="pt-8 border-t border-white/10 text-center text-gray-500 text-sm">
-            &copy; 2025 CMORE. All rights reserved.
+            &copy; {new Date().getFullYear()} CMORE. All rights reserved.
           </div>
         </div>
       </footer>
