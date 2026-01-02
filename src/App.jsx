@@ -119,7 +119,7 @@ function App() {
               </button>
             </div>
             <div className="p-6 text-gray-400 text-sm leading-relaxed space-y-4">
-              <p><strong className="text-white">Effective Date:</strong> January 2025</p>
+              <p><strong className="text-white">Effective Date:</strong> December 2025</p>
               <p>
                 CMORE ("we", "our", or "us") is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, and safeguard your information
