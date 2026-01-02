@@ -84,7 +84,7 @@ function App() {
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Contact</h4>
               <p className="text-gray-400 text-sm leading-relaxed">
-                support@cmore.io<br />
+                hunny3790@gmail.com<br />
                 9-3 Wadong-ro 7an-gil, Danwon-gu,<br />
                 Ansan-si, Gyeonggi-do, 15255,<br />
                 Republic of Korea
@@ -138,7 +138,7 @@ function App() {
               <h3 className="text-white font-semibold pt-4">Contact Us</h3>
               <p>
                 If you have questions about this Privacy Policy, please contact us at
-                support@cmore.io
+                hunny3790@gmail.com
               </p>
             </div>
           </div>
