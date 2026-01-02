@@ -85,7 +85,9 @@ function App() {
               <h4 className="font-semibold mb-4 text-gray-300">Contact</h4>
               <p className="text-gray-400 text-sm leading-relaxed">
                 support@cmore.io<br />
-                Ansan-si, Gyeonggi-do, Korea
+                9-3 Wadong-ro 7an-gil, Danwon-gu,<br />
+                Ansan-si, Gyeonggi-do, 15255,<br />
+                Republic of Korea
               </p>
             </div>
             <div>
