@@ -1,13 +1,21 @@
 import { useState, useRef } from 'react'
-import { Smartphone, Gamepad2, X, Image, Download, Upload } from 'lucide-react'
+import { Smartphone, Gamepad2, X, Image, Download, Upload, RectangleHorizontal } from 'lucide-react'
 import logoWhite from './assets/CMORE_logo_white.svg'
 
 function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
+
+  // Icon Resizer (512x512)
   const [selectedImage, setSelectedImage] = useState(null)
   const [resizedImage, setResizedImage] = useState(null)
   const [imageInfo, setImageInfo] = useState(null)
   const fileInputRef = useRef(null)
+
+  // Feature Graphic Resizer (1024x500)
+  const [selectedGraphic, setSelectedGraphic] = useState(null)
+  const [resizedGraphic, setResizedGraphic] = useState(null)
+  const [graphicInfo, setGraphicInfo] = useState(null)
+  const graphicInputRef = useRef(null)
 
   const handleImageSelect = (e) => {
     const file = e.target.files[0]
@@ -33,6 +41,30 @@ function App() {
     reader.readAsDataURL(file)
   }
 
+  const handleGraphicSelect = (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      const img = new window.Image()
+      img.onload = () => {
+        setGraphicInfo({ width: img.width, height: img.height, name: file.name })
+        setSelectedGraphic(event.target.result)
+
+        // Resize to 1024x500
+        const canvas = document.createElement('canvas')
+        canvas.width = 1024
+        canvas.height = 500
+        const ctx = canvas.getContext('2d')
+        ctx.drawImage(img, 0, 0, 1024, 500)
+        setResizedGraphic(canvas.toDataURL('image/png'))
+      }
+      img.src = event.target.result
+    }
+    reader.readAsDataURL(file)
+  }
+
   const handleDownload = () => {
     if (!resizedImage) return
     const link = document.createElement('a')
@@ -41,11 +73,26 @@ function App() {
     link.click()
   }
 
+  const handleGraphicDownload = () => {
+    if (!resizedGraphic) return
+    const link = document.createElement('a')
+    link.download = 'feature_graphic_1024x500.png'
+    link.href = resizedGraphic
+    link.click()
+  }
+
   const resetImage = () => {
     setSelectedImage(null)
     setResizedImage(null)
     setImageInfo(null)
     if (fileInputRef.current) fileInputRef.current.value = ''
+  }
+
+  const resetGraphic = () => {
+    setSelectedGraphic(null)
+    setResizedGraphic(null)
+    setGraphicInfo(null)
+    if (graphicInputRef.current) graphicInputRef.current.value = ''
   }
 
   return (
@@ -122,65 +169,130 @@ function App() {
             Simple utilities for developers and designers
           </p>
 
-          <div className="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                <Image className="w-5 h-5 text-white" />
+          <div className="space-y-8">
+            {/* Icon Resizer */}
+            <div className="p-8 rounded-2xl border border-white/10 bg-white/5">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                  <Image className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Icon Resizer</h3>
+                  <p className="text-gray-400 text-sm">1024×1024 → 512×512 PNG</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold">Image Resizer</h3>
-                <p className="text-gray-400 text-sm">1024×1024 → 512×512 PNG</p>
-              </div>
+
+              <input
+                type="file"
+                accept="image/png,image/jpeg"
+                onChange={handleImageSelect}
+                ref={fileInputRef}
+                className="hidden"
+                id="imageInput"
+              />
+
+              {!selectedImage ? (
+                <label
+                  htmlFor="imageInput"
+                  className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-white/40 transition-colors"
+                >
+                  <Upload className="w-8 h-8 text-gray-400 mb-3" />
+                  <span className="text-gray-400">Click to upload image</span>
+                  <span className="text-gray-500 text-sm mt-1">PNG or JPEG</span>
+                </label>
+              ) : (
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <p className="text-gray-400 text-sm mb-2">Original ({imageInfo?.width}×{imageInfo?.height})</p>
+                      <img src={selectedImage} alt="Original" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-gray-400 text-sm mb-2">Resized (512×512)</p>
+                      <img src={resizedImage} alt="Resized" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
+                    </div>
+                  </div>
+                  <div className="flex gap-3 justify-center">
+                    <button
+                      onClick={handleDownload}
+                      className="flex items-center gap-2 px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download
+                    </button>
+                    <button
+                      onClick={resetImage}
+                      className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
+                    >
+                      <X className="w-4 h-4" />
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
 
-            <input
-              type="file"
-              accept="image/png,image/jpeg"
-              onChange={handleImageSelect}
-              ref={fileInputRef}
-              className="hidden"
-              id="imageInput"
-            />
-
-            {!selectedImage ? (
-              <label
-                htmlFor="imageInput"
-                className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-white/40 transition-colors"
-              >
-                <Upload className="w-8 h-8 text-gray-400 mb-3" />
-                <span className="text-gray-400">Click to upload image</span>
-                <span className="text-gray-500 text-sm mt-1">PNG or JPEG</span>
-              </label>
-            ) : (
-              <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <p className="text-gray-400 text-sm mb-2">Original ({imageInfo?.width}×{imageInfo?.height})</p>
-                    <img src={selectedImage} alt="Original" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-gray-400 text-sm mb-2">Resized (512×512)</p>
-                    <img src={resizedImage} alt="Resized" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
-                  </div>
+            {/* Feature Graphic Resizer */}
+            <div className="p-8 rounded-2xl border border-white/10 bg-white/5">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                  <RectangleHorizontal className="w-5 h-5 text-white" />
                 </div>
-                <div className="flex gap-3 justify-center">
-                  <button
-                    onClick={handleDownload}
-                    className="flex items-center gap-2 px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download
-                  </button>
-                  <button
-                    onClick={resetImage}
-                    className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
-                  >
-                    <X className="w-4 h-4" />
-                    Reset
-                  </button>
+                <div>
+                  <h3 className="text-xl font-semibold">Feature Graphic Resizer</h3>
+                  <p className="text-gray-400 text-sm">Any size → 1024×500 PNG (Play Store)</p>
                 </div>
               </div>
-            )}
+
+              <input
+                type="file"
+                accept="image/png,image/jpeg"
+                onChange={handleGraphicSelect}
+                ref={graphicInputRef}
+                className="hidden"
+                id="graphicInput"
+              />
+
+              {!selectedGraphic ? (
+                <label
+                  htmlFor="graphicInput"
+                  className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-white/40 transition-colors"
+                >
+                  <Upload className="w-8 h-8 text-gray-400 mb-3" />
+                  <span className="text-gray-400">Click to upload image</span>
+                  <span className="text-gray-500 text-sm mt-1">PNG or JPEG</span>
+                </label>
+              ) : (
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <p className="text-gray-400 text-sm mb-2">Original ({graphicInfo?.width}×{graphicInfo?.height})</p>
+                      <img src={selectedGraphic} alt="Original" className="w-full max-w-[320px] mx-auto rounded-lg border border-white/10" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-gray-400 text-sm mb-2">Resized (1024×500)</p>
+                      <img src={resizedGraphic} alt="Resized" className="w-full max-w-[320px] mx-auto rounded-lg border border-white/10" />
+                    </div>
+                  </div>
+                  <div className="flex gap-3 justify-center">
+                    <button
+                      onClick={handleGraphicDownload}
+                      className="flex items-center gap-2 px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download
+                    </button>
+                    <button
+                      onClick={resetGraphic}
+                      className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
+                    >
+                      <X className="w-4 h-4" />
+                      Reset
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
