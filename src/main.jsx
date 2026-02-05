@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import CatchNotePrivacy from './pages/app/catchnote/Privacy'
+import AppIconGenerator from './pages/tools/AppIconGenerator'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/app/catchnote/privacy" element={<CatchNotePrivacy />} />
+        <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
