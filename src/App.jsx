@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Smartphone, Gamepad2, X, Image, Download, Upload, RectangleHorizontal, Layers } from 'lucide-react'
+import { Smartphone, Gamepad2, X, Image, Download, Upload, RectangleHorizontal, Layers, QrCode } from 'lucide-react'
 import logoWhite from './assets/CMORE_logo_white.svg'
 
 function App() {
@@ -183,6 +183,22 @@ function App() {
                 <div>
                   <h3 className="text-xl font-semibold">App Icon Generator</h3>
                   <p className="text-gray-400 text-sm">Generate all iOS & Android icon sizes as a ZIP</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* QR Code Generator */}
+            <Link
+              to="/tools/qr-code-generator"
+              className="block p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
+                  <QrCode className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">QR Code Generator</h3>
+                  <p className="text-gray-400 text-sm">Generate customizable QR codes from text or URLs</p>
                 </div>
               </div>
             </Link>
