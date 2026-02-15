@@ -34,6 +34,9 @@ No test runner or linter is configured.
 | `/app/catchnote/privacy` | `src/pages/app/catchnote/Privacy.jsx` — Catch Note privacy policy |
 | `/tools/app-icon-generator` | `src/pages/tools/AppIconGenerator.jsx` — iOS + Android 아이콘 세트 ZIP 생성 |
 | `/tools/qr-code-generator` | `src/pages/tools/QrCodeGenerator.jsx` — QR 코드 생성 (텍스트/URL → PNG) |
+| `/tools/icon-resizer` | `src/pages/tools/IconResizer.jsx` — 이미지를 512×512 PNG로 리사이즈 |
+| `/tools/feature-graphic-resizer` | `src/pages/tools/FeatureGraphicResizer.jsx` — 이미지를 1024×500 PNG로 리사이즈 |
+| `*` | `src/pages/NotFound.jsx` — 404 페이지 |
 
 ### Page structure convention
 
@@ -54,13 +57,11 @@ Both files must be kept in sync if the routing scheme changes.
 
 모든 이미지 처리 도구는 Canvas API + FileReader를 사용한 완전한 클라이언트 사이드 처리 (백엔드 없음).
 
-**랜딩 페이지 내장 도구 (`src/App.jsx`):**
-- **Icon Resizer** — 이미지를 512×512 PNG로 리사이즈
-- **Feature Graphic Resizer** — 이미지를 1024×500 PNG로 리사이즈 (Google Play Store 형식)
-
-**독립 페이지 도구:**
-- **App Icon Generator** (`/tools/app-icon-generator`) — 소스 이미지 하나로 iOS 아이콘 세트 (10개 사이즈) + Android 아이콘 세트 (6개 밀도)를 생성하여 ZIP 다운로드. JSZip 라이브러리 사용.
+**모든 도구는 독립 페이지로 구성:**
+- **App Icon Generator** (`/tools/app-icon-generator`) — 소스 이미지 하나로 iOS 아이콘 세트 (10개 사이즈) + Android 아이콘 세트 (6개 밀도)를 생성하여 ZIP 다운로드. JSZip 라이브러리 사용. 드래그 앤 드롭 지원.
 - **QR Code Generator** (`/tools/qr-code-generator`) — 텍스트/URL 입력으로 QR 코드 생성. 사이즈, 전경/배경 색상, 에러 보정 레벨 커스텀 가능. PNG 다운로드 및 클립보드 복사 지원. qrcode 라이브러리 사용.
+- **Icon Resizer** (`/tools/icon-resizer`) — 이미지를 512×512 PNG로 리사이즈. 드래그 앤 드롭 지원.
+- **Feature Graphic Resizer** (`/tools/feature-graphic-resizer`) — 이미지를 1024×500 PNG로 리사이즈 (Google Play Store 형식). 드래그 앤 드롭 지원.
 
 ## Deployment
 

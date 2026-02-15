@@ -1,147 +1,143 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Smartphone, Gamepad2, X, Image, Download, Upload, RectangleHorizontal, Layers, QrCode } from 'lucide-react'
+import {
+  Smartphone, Gamepad2, Image, RectangleHorizontal, Layers, QrCode,
+  Menu, X, ArrowUp, Github, Mail, ChevronRight, FileText,
+} from 'lucide-react'
 import logoWhite from './assets/CMORE_logo_white.svg'
+
+const NAV_LINKS = [
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#tools', label: 'Tools' },
+  { href: '#contact', label: 'Contact' },
+]
+
+const TOOLS = [
+  { to: '/tools/app-icon-generator', icon: Layers, title: 'App Icon Generator', desc: 'Generate all iOS & Android icon sizes as a ZIP' },
+  { to: '/tools/qr-code-generator', icon: QrCode, title: 'QR Code Generator', desc: 'Generate customizable QR codes from text or URLs' },
+  { to: '/tools/icon-resizer', icon: Image, title: 'Icon Resizer', desc: 'Resize any image to 512x512 PNG' },
+  { to: '/tools/feature-graphic-resizer', icon: RectangleHorizontal, title: 'Feature Graphic Resizer', desc: 'Resize to 1024x500 PNG for Play Store' },
+]
 
 function App() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+  const animatedRef = useRef(false)
 
-  // Icon Resizer (512x512)
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [resizedImage, setResizedImage] = useState(null)
-  const [imageInfo, setImageInfo] = useState(null)
-  const fileInputRef = useRef(null)
+  // Scroll animations with Intersection Observer
+  useEffect(() => {
+    if (animatedRef.current) return
+    animatedRef.current = true
 
-  // Feature Graphic Resizer (1024x500)
-  const [selectedGraphic, setSelectedGraphic] = useState(null)
-  const [resizedGraphic, setResizedGraphic] = useState(null)
-  const [graphicInfo, setGraphicInfo] = useState(null)
-  const graphicInputRef = useRef(null)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
 
-  const handleImageSelect = (e) => {
-    const file = e.target.files[0]
-    if (!file) return
+    document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      const img = new window.Image()
-      img.onload = () => {
-        setImageInfo({ width: img.width, height: img.height, name: file.name })
-        setSelectedImage(event.target.result)
+  // Back to top visibility
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 500)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
-        // Resize to 512x512
-        const canvas = document.createElement('canvas')
-        canvas.width = 512
-        canvas.height = 512
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0, 512, 512)
-        setResizedImage(canvas.toDataURL('image/png'))
-      }
-      img.src = event.target.result
-    }
-    reader.readAsDataURL(file)
-  }
+  const handleNavClick = () => setIsMobileMenuOpen(false)
 
-  const handleGraphicSelect = (e) => {
-    const file = e.target.files[0]
-    if (!file) return
-
-    const reader = new FileReader()
-    reader.onload = (event) => {
-      const img = new window.Image()
-      img.onload = () => {
-        setGraphicInfo({ width: img.width, height: img.height, name: file.name })
-        setSelectedGraphic(event.target.result)
-
-        // Resize to 1024x500
-        const canvas = document.createElement('canvas')
-        canvas.width = 1024
-        canvas.height = 500
-        const ctx = canvas.getContext('2d')
-        ctx.drawImage(img, 0, 0, 1024, 500)
-        setResizedGraphic(canvas.toDataURL('image/png'))
-      }
-      img.src = event.target.result
-    }
-    reader.readAsDataURL(file)
-  }
-
-  const handleDownload = () => {
-    if (!resizedImage) return
-    const link = document.createElement('a')
-    link.download = 'resized_512x512.png'
-    link.href = resizedImage
-    link.click()
-  }
-
-  const handleGraphicDownload = () => {
-    if (!resizedGraphic) return
-    const link = document.createElement('a')
-    link.download = 'feature_graphic_1024x500.png'
-    link.href = resizedGraphic
-    link.click()
-  }
-
-  const resetImage = () => {
-    setSelectedImage(null)
-    setResizedImage(null)
-    setImageInfo(null)
-    if (fileInputRef.current) fileInputRef.current.value = ''
-  }
-
-  const resetGraphic = () => {
-    setSelectedGraphic(null)
-    setResizedGraphic(null)
-    setGraphicInfo(null)
-    if (graphicInputRef.current) graphicInputRef.current.value = ''
-  }
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/70 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="flex items-center">
             <img src={logoWhite} alt="CMORE" className="h-6" />
           </a>
-          <div className="flex items-center gap-8">
-            <a href="#about" className="text-sm text-gray-400 hover:text-white transition-colors">About</a>
-            <a href="#projects" className="text-sm text-gray-400 hover:text-white transition-colors">Projects</a>
-            <a href="#tools" className="text-sm text-gray-400 hover:text-white transition-colors">Tools</a>
-            <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
+
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <a key={link.href} href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                {link.label}
+              </a>
+            ))}
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-md">
+            <div className="px-6 py-4 flex flex-col gap-1">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleNavClick}
+                  className="text-sm text-gray-400 hover:text-white transition-colors py-3 border-b border-white/5 last:border-0"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
+      {/* Hero */}
       <section id="about" className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
         <div className="text-center max-w-3xl">
-          <span className="inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-widest text-gray-400 border border-white/20 rounded-full">
+          <span className="fade-in-up inline-block px-4 py-1.5 mb-6 text-xs font-medium tracking-widest text-gray-400 border border-white/20 rounded-full">
             EST. 2025
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="fade-in-up text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
               See More, Create More.
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+          <p className="fade-in-up text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
             We build intuitive mobile utilities and immersive indie games.
           </p>
           <a
             href="#projects"
-            className="inline-block px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
+            className="fade-in-up inline-block px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
           >
             Explore Our Work
           </a>
         </div>
       </section>
 
+      {/* Projects */}
       <section id="projects" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">What We Build</h2>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+          <h2 className="fade-in-up text-3xl md:text-4xl font-bold mb-4 text-center">What We Build</h2>
+          <p className="fade-in-up text-gray-400 text-center mb-16 max-w-2xl mx-auto">
             From productivity tools to creative experiences
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+
+          {/* Category cards */}
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
+            <div className="fade-in-up group p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
               <div className="w-14 h-14 mb-6 rounded-xl bg-white/10 flex items-center justify-center">
                 <Smartphone className="w-7 h-7 text-white" />
               </div>
@@ -150,7 +146,7 @@ function App() {
                 Simple, focused tools that solve everyday problems. Designed for clarity and ease of use.
               </p>
             </div>
-            <div className="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+            <div className="fade-in-up group p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
               <div className="w-14 h-14 mb-6 rounded-xl bg-white/10 flex items-center justify-center">
                 <Gamepad2 className="w-7 h-7 text-white" />
               </div>
@@ -160,192 +156,97 @@ function App() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="tools" className="py-32 px-6 border-t border-white/10">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Free Tools</h2>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Simple utilities for developers and designers
-          </p>
-
-          <div className="space-y-8">
-            {/* App Icon Generator */}
-            <Link
-              to="/tools/app-icon-generator"
-              className="block p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Layers className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">App Icon Generator</h3>
-                  <p className="text-gray-400 text-sm">Generate all iOS & Android icon sizes as a ZIP</p>
-                </div>
+          {/* App showcase */}
+          <h3 className="fade-in-up text-2xl font-semibold mb-8 text-center">Our Apps</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="fade-in-up p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+              <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                <FileText className="w-8 h-8 text-white" />
               </div>
-            </Link>
-
-            {/* QR Code Generator */}
-            <Link
-              to="/tools/qr-code-generator"
-              className="block p-8 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <QrCode className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">QR Code Generator</h3>
-                  <p className="text-gray-400 text-sm">Generate customizable QR codes from text or URLs</p>
-                </div>
-              </div>
-            </Link>
-
-            {/* Icon Resizer */}
-            <div className="p-8 rounded-2xl border border-white/10 bg-white/5">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <Image className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Icon Resizer</h3>
-                  <p className="text-gray-400 text-sm">1024×1024 → 512×512 PNG</p>
-                </div>
-              </div>
-
-              <input
-                type="file"
-                accept="image/png,image/jpeg"
-                onChange={handleImageSelect}
-                ref={fileInputRef}
-                className="hidden"
-                id="imageInput"
-              />
-
-              {!selectedImage ? (
-                <label
-                  htmlFor="imageInput"
-                  className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-white/40 transition-colors"
-                >
-                  <Upload className="w-8 h-8 text-gray-400 mb-3" />
-                  <span className="text-gray-400">Click to upload image</span>
-                  <span className="text-gray-500 text-sm mt-1">PNG or JPEG</span>
-                </label>
-              ) : (
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="text-center">
-                      <p className="text-gray-400 text-sm mb-2">Original ({imageInfo?.width}×{imageInfo?.height})</p>
-                      <img src={selectedImage} alt="Original" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-400 text-sm mb-2">Resized (512×512)</p>
-                      <img src={resizedImage} alt="Resized" className="w-full max-w-[256px] mx-auto rounded-lg border border-white/10" />
-                    </div>
-                  </div>
-                  <div className="flex gap-3 justify-center">
-                    <button
-                      onClick={handleDownload}
-                      className="flex items-center gap-2 px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download
-                    </button>
-                    <button
-                      onClick={resetImage}
-                      className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
-                    >
-                      <X className="w-4 h-4" />
-                      Reset
-                    </button>
-                  </div>
-                </div>
-              )}
+              <h4 className="text-lg font-semibold mb-2">Catch Note</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Quick capture note app. Catch your ideas instantly with a simple and intuitive interface.
+              </p>
+              <Link
+                to="/app/catchnote/privacy"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Privacy Policy
+              </Link>
             </div>
 
-            {/* Feature Graphic Resizer */}
-            <div className="p-8 rounded-2xl border border-white/10 bg-white/5">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                  <RectangleHorizontal className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">Feature Graphic Resizer</h3>
-                  <p className="text-gray-400 text-sm">Any size → 1024×500 PNG (Play Store)</p>
-                </div>
-              </div>
-
-              <input
-                type="file"
-                accept="image/png,image/jpeg"
-                onChange={handleGraphicSelect}
-                ref={graphicInputRef}
-                className="hidden"
-                id="graphicInput"
-              />
-
-              {!selectedGraphic ? (
-                <label
-                  htmlFor="graphicInput"
-                  className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed border-white/20 rounded-xl cursor-pointer hover:border-white/40 transition-colors"
-                >
-                  <Upload className="w-8 h-8 text-gray-400 mb-3" />
-                  <span className="text-gray-400">Click to upload image</span>
-                  <span className="text-gray-500 text-sm mt-1">PNG or JPEG</span>
-                </label>
-              ) : (
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="text-center">
-                      <p className="text-gray-400 text-sm mb-2">Original ({graphicInfo?.width}×{graphicInfo?.height})</p>
-                      <img src={selectedGraphic} alt="Original" className="w-full max-w-[320px] mx-auto rounded-lg border border-white/10" />
-                    </div>
-                    <div className="text-center">
-                      <p className="text-gray-400 text-sm mb-2">Resized (1024×500)</p>
-                      <img src={resizedGraphic} alt="Resized" className="w-full max-w-[320px] mx-auto rounded-lg border border-white/10" />
-                    </div>
-                  </div>
-                  <div className="flex gap-3 justify-center">
-                    <button
-                      onClick={handleGraphicDownload}
-                      className="flex items-center gap-2 px-6 py-2.5 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download
-                    </button>
-                    <button
-                      onClick={resetGraphic}
-                      className="flex items-center gap-2 px-6 py-2.5 border border-white/20 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
-                    >
-                      <X className="w-4 h-4" />
-                      Reset
-                    </button>
-                  </div>
-                </div>
-              )}
+            {/* Coming soon placeholder */}
+            <div className="fade-in-up p-6 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] flex flex-col items-center justify-center text-center min-h-[220px]">
+              <p className="text-gray-500 text-sm">More apps coming soon...</p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Tools */}
+      <section id="tools" className="py-32 px-6 border-t border-white/10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="fade-in-up text-3xl md:text-4xl font-bold mb-4 text-center">Free Tools</h2>
+          <p className="fade-in-up text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+            Simple utilities for developers and designers
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {TOOLS.map((tool) => (
+              <Link
+                key={tool.to}
+                to={tool.to}
+                className="fade-in-up flex items-center gap-4 p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                  <tool.icon className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-semibold">{tool.title}</h3>
+                  <p className="text-gray-400 text-sm truncate">{tool.desc}</p>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-500 group-hover:text-white transition-colors shrink-0" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer id="contact" className="border-t border-white/10 py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
               <img src={logoWhite} alt="CMORE" className="h-5 mb-4" />
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 Mobile app & game development studio.<br />
                 See more, create more.
               </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://github.com/cmore-team"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:hunny3790@gmail.com"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                  aria-label="Email"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Contact</h4>
               <p className="text-gray-400 text-sm leading-relaxed">
                 hunny3790@gmail.com<br />
-                9-3 Wadong-ro 7an-gil, Danwon-gu,<br />
-                Ansan-si, Gyeonggi-do, 15255,<br />
+                Ansan-si, Gyeonggi-do,<br />
                 Republic of Korea
               </p>
             </div>
@@ -365,6 +266,18 @@ function App() {
         </div>
       </footer>
 
+      {/* Back to Top */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-40 w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-all ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
+
+      {/* Privacy Modal */}
       {isPrivacyOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6">
           <div className="bg-zinc-900 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border border-white/10">
@@ -380,7 +293,7 @@ function App() {
             <div className="p-6 text-gray-400 text-sm leading-relaxed space-y-4">
               <p><strong className="text-white">Effective Date:</strong> December 2025</p>
               <p>
-                CMORE ("we", "our", or "us") is committed to protecting your privacy.
+                CMORE (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, and safeguard your information
                 when you use our mobile applications.
               </p>
