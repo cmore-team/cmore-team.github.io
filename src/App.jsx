@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   Smartphone, Gamepad2, Image, RectangleHorizontal, Layers, QrCode,
   Menu, X, ArrowUp, Github, Mail, ChevronRight, FileText,
+  Activity, Calculator,
 } from 'lucide-react'
 import logoWhite from './assets/CMORE_logo_white.svg'
 
@@ -176,9 +177,50 @@ function App() {
               </Link>
             </div>
 
-            {/* Coming soon placeholder */}
-            <div className="fade-in-up p-6 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] flex flex-col items-center justify-center text-center min-h-[220px]">
-              <p className="text-gray-500 text-sm">More apps coming soon...</p>
+            <div className="fade-in-up p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+              <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-cyan-300 via-blue-500 to-violet-600 flex items-center justify-center">
+                <Calculator className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Anzan</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Daily mental math practice with sprints, flash sums, percentages, fractions, and geometry basics.
+              </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
+                <Link
+                  to="/app/anzan"
+                  className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                  Overview
+                </Link>
+                <Link
+                  to="/app/anzan/support"
+                  className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                  Support
+                </Link>
+                <Link
+                  to="/app/anzan/privacy"
+                  className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
+
+            <div className="fade-in-up p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all">
+              <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-emerald-300 to-lime-600 flex items-center justify-center">
+                <Activity className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Crossline</h4>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                ADHD-friendly habit tracking with nudges, focus tools, and local-first progress.
+              </p>
+              <Link
+                to="/app/crossline/privacy"
+                className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>

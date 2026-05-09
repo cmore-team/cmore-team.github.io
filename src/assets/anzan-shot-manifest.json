@@ -1,0 +1,36 @@
+{
+  "app": "anzan",
+  "generatedBy": "screenshot-studio",
+  "assets": [
+    {
+      "name": "daily",
+      "file": "anzan-shot-daily.svg",
+      "title": "매일 90초\n계산 루틴",
+      "subtitle": "오늘의 루틴"
+    },
+    {
+      "name": "flash",
+      "file": "anzan-shot-flash.svg",
+      "title": "0.5초마다\n숫자 하나",
+      "subtitle": "플래시 암산"
+    },
+    {
+      "name": "geometry",
+      "file": "anzan-shot-geometry.svg",
+      "title": "문제와 답을\n명확하게",
+      "subtitle": "도형 감각"
+    },
+    {
+      "name": "percent",
+      "file": "anzan-shot-percent.svg",
+      "title": "숫자만 더\n크게 보이게",
+      "subtitle": "퍼센트 감각"
+    },
+    {
+      "name": "results",
+      "file": "anzan-shot-results.svg",
+      "title": "기록은\n기기 안에",
+      "subtitle": "기록"
+    }
+  ]
+}
