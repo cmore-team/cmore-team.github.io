@@ -72,7 +72,7 @@ export default function AnzanPrivacy() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
-                We do not use advertising SDKs, analytics SDKs, or tracking SDKs.
+                We do not use analytics SDKs or tracking SDKs.
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
