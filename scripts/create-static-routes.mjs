@@ -11,6 +11,8 @@ const routes = [
   'app/anzan/support',
   'app/catchnote/privacy',
   'app/crossline/privacy',
+  'app/laborform/privacy',
+  'app/laborform/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

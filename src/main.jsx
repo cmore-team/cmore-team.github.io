@@ -6,6 +6,8 @@ import AnzanPage from './pages/app/anzan/AnzanPage'
 import AnzanPrivacy from './pages/app/anzan/Privacy'
 import AnzanSupport from './pages/app/anzan/Support'
 import CatchNotePrivacy from './pages/app/catchnote/Privacy'
+import LaborformPrivacy from './pages/app/laborform/Privacy'
+import LaborformSupport from './pages/app/laborform/Support'
 import CrosslinePrivacy from './pages/app/crossline/Privacy'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
@@ -24,6 +26,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/anzan/support" element={<AnzanSupport />} />
         <Route path="/app/catchnote/privacy" element={<CatchNotePrivacy />} />
         <Route path="/app/crossline/privacy" element={<CrosslinePrivacy />} />
+        <Route path="/app/laborform/privacy" element={<LaborformPrivacy />} />
+        <Route path="/app/laborform/support" element={<LaborformSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
