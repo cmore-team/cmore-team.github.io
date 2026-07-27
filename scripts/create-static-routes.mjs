@@ -13,6 +13,8 @@ const routes = [
   'app/crossline/privacy',
   'app/laborform/privacy',
   'app/laborform/support',
+  'app/idphoto/privacy',
+  'app/idphoto/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

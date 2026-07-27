@@ -9,6 +9,8 @@ import CatchNotePrivacy from './pages/app/catchnote/Privacy'
 import LaborformPrivacy from './pages/app/laborform/Privacy'
 import LaborformSupport from './pages/app/laborform/Support'
 import CrosslinePrivacy from './pages/app/crossline/Privacy'
+import IdphotoPrivacy from './pages/app/idphoto/Privacy'
+import IdphotoSupport from './pages/app/idphoto/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -28,6 +30,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/crossline/privacy" element={<CrosslinePrivacy />} />
         <Route path="/app/laborform/privacy" element={<LaborformPrivacy />} />
         <Route path="/app/laborform/support" element={<LaborformSupport />} />
+        <Route path="/app/idphoto/privacy" element={<IdphotoPrivacy />} />
+        <Route path="/app/idphoto/support" element={<IdphotoSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />

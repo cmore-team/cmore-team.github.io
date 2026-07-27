@@ -31,7 +31,11 @@ No test runner or linter is configured.
 | Path | Component |
 |------|-----------|
 | `/` | `src/App.jsx` — main landing page (hero, about, projects, tools, contact) |
+| `/app/anzan`, `/app/anzan/privacy`, `/app/anzan/support` | `src/pages/app/anzan/` — 하루암산 |
 | `/app/catchnote/privacy` | `src/pages/app/catchnote/Privacy.jsx` — Catch Note privacy policy |
+| `/app/crossline/privacy` | `src/pages/app/crossline/Privacy.jsx` — 크로스라인 |
+| `/app/laborform/privacy`, `/app/laborform/support` | `src/pages/app/laborform/` — 근로계약서 작성 |
+| `/app/idphoto/privacy`, `/app/idphoto/support` | `src/pages/app/idphoto/` — 증명사진 메이커 |
 | `/tools/app-icon-generator` | `src/pages/tools/AppIconGenerator.jsx` — iOS + Android 아이콘 세트 ZIP 생성 |
 | `/tools/qr-code-generator` | `src/pages/tools/QrCodeGenerator.jsx` — QR 코드 생성 (텍스트/URL → PNG) |
 | `/tools/icon-resizer` | `src/pages/tools/IconResizer.jsx` — 이미지를 512×512 PNG로 리사이즈 |
@@ -43,7 +47,9 @@ No test runner or linter is configured.
 - App-specific pages: `src/pages/app/{appname}/{PageName}.jsx`
 - Tool pages: `src/pages/tools/{ToolName}.jsx`
 
-New routes must be added to the `<Routes>` block in `src/main.jsx`.
+New routes must be added in **two** places: the `<Routes>` block in `src/main.jsx` **and** the
+`routes` array in `scripts/create-static-routes.mjs`. Missing the second one ships a route that
+404s on a hard refresh — for an App Store privacy URL that is a review blocker, not a cosmetic bug.
 
 ### GitHub Pages SPA routing
 
