@@ -17,6 +17,8 @@ import BillformPrivacy from './pages/app/billform/Privacy'
 import BillformSupport from './pages/app/billform/Support'
 import InkframePrivacy from './pages/app/inkframe/Privacy'
 import InkframeSupport from './pages/app/inkframe/Support'
+import QrbrandPrivacy from './pages/app/qrbrand/Privacy'
+import QrbrandSupport from './pages/app/qrbrand/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -44,6 +46,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/billform/support" element={<BillformSupport />} />
         <Route path="/app/inkframe/privacy" element={<InkframePrivacy />} />
         <Route path="/app/inkframe/support" element={<InkframeSupport />} />
+        <Route path="/app/qrbrand/privacy" element={<QrbrandPrivacy />} />
+        <Route path="/app/qrbrand/support" element={<QrbrandSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
