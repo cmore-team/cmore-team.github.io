@@ -11,6 +11,8 @@ import LaborformSupport from './pages/app/laborform/Support'
 import CrosslinePrivacy from './pages/app/crossline/Privacy'
 import IdphotoPrivacy from './pages/app/idphoto/Privacy'
 import IdphotoSupport from './pages/app/idphoto/Support'
+import ReceiptcsvPrivacy from './pages/app/receiptcsv/Privacy'
+import ReceiptcsvSupport from './pages/app/receiptcsv/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -32,6 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/laborform/support" element={<LaborformSupport />} />
         <Route path="/app/idphoto/privacy" element={<IdphotoPrivacy />} />
         <Route path="/app/idphoto/support" element={<IdphotoSupport />} />
+        <Route path="/app/receiptcsv/privacy" element={<ReceiptcsvPrivacy />} />
+        <Route path="/app/receiptcsv/support" element={<ReceiptcsvSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
