@@ -38,6 +38,7 @@ No test runner or linter is configured.
 | `/app/idphoto/privacy`, `/app/idphoto/support` | `src/pages/app/idphoto/` — 증명사진 메이커 |
 | `/app/receiptcsv/privacy`, `/app/receiptcsv/support` | `src/pages/app/receiptcsv/` — 영수증 경비 정리 |
 | `/app/billform/privacy`, `/app/billform/support` | `src/pages/app/billform/` — 견적서 거래명세서 |
+| `/app/inkframe/privacy`, `/app/inkframe/support` | `src/pages/app/inkframe/` — 글자 뒤 사진 |
 | `/tools/app-icon-generator` | `src/pages/tools/AppIconGenerator.jsx` — iOS + Android 아이콘 세트 ZIP 생성 |
 | `/tools/qr-code-generator` | `src/pages/tools/QrCodeGenerator.jsx` — QR 코드 생성 (텍스트/URL → PNG) |
 | `/tools/icon-resizer` | `src/pages/tools/IconResizer.jsx` — 이미지를 512×512 PNG로 리사이즈 |

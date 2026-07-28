@@ -19,6 +19,8 @@ const routes = [
   'app/receiptcsv/support',
   'app/billform/privacy',
   'app/billform/support',
+  'app/inkframe/privacy',
+  'app/inkframe/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
