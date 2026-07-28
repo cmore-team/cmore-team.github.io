@@ -19,6 +19,14 @@ import InkframePrivacy from './pages/app/inkframe/Privacy'
 import InkframeSupport from './pages/app/inkframe/Support'
 import QrbrandPrivacy from './pages/app/qrbrand/Privacy'
 import QrbrandSupport from './pages/app/qrbrand/Support'
+import SubsledgerPrivacy from './pages/app/subsledger/Privacy'
+import SubsledgerSupport from './pages/app/subsledger/Support'
+import PressuretrackPrivacy from './pages/app/pressuretrack/Privacy'
+import PressuretrackSupport from './pages/app/pressuretrack/Support'
+import WattcalcPrivacy from './pages/app/wattcalc/Privacy'
+import WattcalcSupport from './pages/app/wattcalc/Support'
+import LoanplanPrivacy from './pages/app/loanplan/Privacy'
+import LoanplanSupport from './pages/app/loanplan/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -48,6 +56,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/inkframe/support" element={<InkframeSupport />} />
         <Route path="/app/qrbrand/privacy" element={<QrbrandPrivacy />} />
         <Route path="/app/qrbrand/support" element={<QrbrandSupport />} />
+        <Route path="/app/subsledger/privacy" element={<SubsledgerPrivacy />} />
+        <Route path="/app/subsledger/support" element={<SubsledgerSupport />} />
+        <Route path="/app/pressuretrack/privacy" element={<PressuretrackPrivacy />} />
+        <Route path="/app/pressuretrack/support" element={<PressuretrackSupport />} />
+        <Route path="/app/wattcalc/privacy" element={<WattcalcPrivacy />} />
+        <Route path="/app/wattcalc/support" element={<WattcalcSupport />} />
+        <Route path="/app/loanplan/privacy" element={<LoanplanPrivacy />} />
+        <Route path="/app/loanplan/support" element={<LoanplanSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
