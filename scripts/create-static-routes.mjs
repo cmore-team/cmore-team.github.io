@@ -17,6 +17,8 @@ const routes = [
   'app/idphoto/support',
   'app/receiptcsv/privacy',
   'app/receiptcsv/support',
+  'app/billform/privacy',
+  'app/billform/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
