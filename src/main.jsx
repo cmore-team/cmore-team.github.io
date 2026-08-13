@@ -27,6 +27,9 @@ import WattcalcPrivacy from './pages/app/wattcalc/Privacy'
 import WattcalcSupport from './pages/app/wattcalc/Support'
 import LoanplanPrivacy from './pages/app/loanplan/Privacy'
 import LoanplanSupport from './pages/app/loanplan/Support'
+import LanbeamPage from './pages/app/lanbeam/LanbeamPage'
+import LanbeamPrivacy from './pages/app/lanbeam/Privacy'
+import LanbeamSupport from './pages/app/lanbeam/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -64,6 +67,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/wattcalc/support" element={<WattcalcSupport />} />
         <Route path="/app/loanplan/privacy" element={<LoanplanPrivacy />} />
         <Route path="/app/loanplan/support" element={<LoanplanSupport />} />
+        <Route path="/app/lanbeam" element={<LanbeamPage />} />
+        <Route path="/app/lanbeam/privacy" element={<LanbeamPrivacy />} />
+        <Route path="/app/lanbeam/support" element={<LanbeamSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
