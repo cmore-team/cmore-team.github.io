@@ -39,6 +39,7 @@ No test runner or linter is configured.
 | `/app/receiptcsv/privacy`, `/app/receiptcsv/support` | `src/pages/app/receiptcsv/` — 영수증 경비 정리 |
 | `/app/billform/privacy`, `/app/billform/support` | `src/pages/app/billform/` — 견적서 거래명세서 |
 | `/app/inkframe/privacy`, `/app/inkframe/support` | `src/pages/app/inkframe/` — 글자 뒤 사진 |
+| `/app/{slug}/privacy`, `/app/{slug}/support` for pantrypaw·plantpaw·waterpaw·splitpaw·packpaw·yarnpaw·bookpaw·cardpaw·focuspaw·giftpaw | `src/pages/app/{slug}/` — 고양이 10종 앱 (날담이·잎새봄·물도리·몫모아·챙그리·단소미·갈피잠·되새미·이음숨·소복담), 공용 레이아웃은 `src/pages/app/paws/PawPage.jsx` |
 | `/tools/app-icon-generator` | `src/pages/tools/AppIconGenerator.jsx` — iOS + Android 아이콘 세트 ZIP 생성 |
 | `/tools/qr-code-generator` | `src/pages/tools/QrCodeGenerator.jsx` — QR 코드 생성 (텍스트/URL → PNG) |
 | `/tools/icon-resizer` | `src/pages/tools/IconResizer.jsx` — 이미지를 512×512 PNG로 리사이즈 |
