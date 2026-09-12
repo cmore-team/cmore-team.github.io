@@ -30,6 +30,26 @@ import LoanplanSupport from './pages/app/loanplan/Support'
 import LanbeamPage from './pages/app/lanbeam/LanbeamPage'
 import LanbeamPrivacy from './pages/app/lanbeam/Privacy'
 import LanbeamSupport from './pages/app/lanbeam/Support'
+import PantrypawPrivacy from './pages/app/pantrypaw/Privacy'
+import PantrypawSupport from './pages/app/pantrypaw/Support'
+import PlantpawPrivacy from './pages/app/plantpaw/Privacy'
+import PlantpawSupport from './pages/app/plantpaw/Support'
+import WaterpawPrivacy from './pages/app/waterpaw/Privacy'
+import WaterpawSupport from './pages/app/waterpaw/Support'
+import SplitpawPrivacy from './pages/app/splitpaw/Privacy'
+import SplitpawSupport from './pages/app/splitpaw/Support'
+import PackpawPrivacy from './pages/app/packpaw/Privacy'
+import PackpawSupport from './pages/app/packpaw/Support'
+import YarnpawPrivacy from './pages/app/yarnpaw/Privacy'
+import YarnpawSupport from './pages/app/yarnpaw/Support'
+import BookpawPrivacy from './pages/app/bookpaw/Privacy'
+import BookpawSupport from './pages/app/bookpaw/Support'
+import CardpawPrivacy from './pages/app/cardpaw/Privacy'
+import CardpawSupport from './pages/app/cardpaw/Support'
+import FocuspawPrivacy from './pages/app/focuspaw/Privacy'
+import FocuspawSupport from './pages/app/focuspaw/Support'
+import GiftpawPrivacy from './pages/app/giftpaw/Privacy'
+import GiftpawSupport from './pages/app/giftpaw/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -70,6 +90,26 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/lanbeam" element={<LanbeamPage />} />
         <Route path="/app/lanbeam/privacy" element={<LanbeamPrivacy />} />
         <Route path="/app/lanbeam/support" element={<LanbeamSupport />} />
+        <Route path="/app/pantrypaw/privacy" element={<PantrypawPrivacy />} />
+        <Route path="/app/pantrypaw/support" element={<PantrypawSupport />} />
+        <Route path="/app/plantpaw/privacy" element={<PlantpawPrivacy />} />
+        <Route path="/app/plantpaw/support" element={<PlantpawSupport />} />
+        <Route path="/app/waterpaw/privacy" element={<WaterpawPrivacy />} />
+        <Route path="/app/waterpaw/support" element={<WaterpawSupport />} />
+        <Route path="/app/splitpaw/privacy" element={<SplitpawPrivacy />} />
+        <Route path="/app/splitpaw/support" element={<SplitpawSupport />} />
+        <Route path="/app/packpaw/privacy" element={<PackpawPrivacy />} />
+        <Route path="/app/packpaw/support" element={<PackpawSupport />} />
+        <Route path="/app/yarnpaw/privacy" element={<YarnpawPrivacy />} />
+        <Route path="/app/yarnpaw/support" element={<YarnpawSupport />} />
+        <Route path="/app/bookpaw/privacy" element={<BookpawPrivacy />} />
+        <Route path="/app/bookpaw/support" element={<BookpawSupport />} />
+        <Route path="/app/cardpaw/privacy" element={<CardpawPrivacy />} />
+        <Route path="/app/cardpaw/support" element={<CardpawSupport />} />
+        <Route path="/app/focuspaw/privacy" element={<FocuspawPrivacy />} />
+        <Route path="/app/focuspaw/support" element={<FocuspawSupport />} />
+        <Route path="/app/giftpaw/privacy" element={<GiftpawPrivacy />} />
+        <Route path="/app/giftpaw/support" element={<GiftpawSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
