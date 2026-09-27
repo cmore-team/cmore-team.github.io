@@ -56,6 +56,8 @@ const routes = [
   'app/giftpaw/support',
   'app/minesweeper/privacy',
   'app/minesweeper/support',
+  'app/light-window/privacy',
+  'app/light-window/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
