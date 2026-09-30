@@ -54,6 +54,8 @@ import MinesweeperPrivacy from './pages/app/minesweeper/Privacy'
 import MinesweeperSupport from './pages/app/minesweeper/Support'
 import LightWindowPrivacy from './pages/app/light-window/Privacy'
 import LightWindowSupport from './pages/app/light-window/Support'
+import MoveincheckPrivacy from './pages/app/moveincheck/Privacy'
+import MoveincheckSupport from './pages/app/moveincheck/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -118,6 +120,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/minesweeper/support" element={<MinesweeperSupport />} />
         <Route path="/app/light-window/privacy" element={<LightWindowPrivacy />} />
         <Route path="/app/light-window/support" element={<LightWindowSupport />} />
+        <Route path="/app/moveincheck/privacy" element={<MoveincheckPrivacy />} />
+        <Route path="/app/moveincheck/support" element={<MoveincheckSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />

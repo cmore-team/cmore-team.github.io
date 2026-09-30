@@ -58,6 +58,8 @@ const routes = [
   'app/minesweeper/support',
   'app/light-window/privacy',
   'app/light-window/support',
+  'app/moveincheck/privacy',
+  'app/moveincheck/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
