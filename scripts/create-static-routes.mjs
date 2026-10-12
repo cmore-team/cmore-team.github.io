@@ -15,6 +15,8 @@ const routes = [
   'app/laborform/support',
   'app/idphoto/privacy',
   'app/idphoto/support',
+  'app/promptvault/privacy',
+  'app/promptvault/support',
   'app/receiptcsv/privacy',
   'app/receiptcsv/support',
   'app/billform/privacy',
