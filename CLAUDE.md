@@ -37,6 +37,7 @@ No test runner or linter is configured.
 | `/app/laborform/privacy`, `/app/laborform/support` | `src/pages/app/laborform/` — 근로계약서 작성 |
 | `/app/idphoto/privacy`, `/app/idphoto/support` | `src/pages/app/idphoto/` — 증명사진 메이커 |
 | `/app/promptvault/privacy`, `/app/promptvault/support` | `src/pages/app/promptvault/` — 프롬프트 보관함 |
+| `/app/geckonote/privacy`, `/app/geckonote/support` | `src/pages/app/geckonote/` — 게코노트 |
 | `/app/receiptcsv/privacy`, `/app/receiptcsv/support` | `src/pages/app/receiptcsv/` — 영수증 경비 정리 |
 | `/app/billform/privacy`, `/app/billform/support` | `src/pages/app/billform/` — 견적서 거래명세서 |
 | `/app/inkframe/privacy`, `/app/inkframe/support` | `src/pages/app/inkframe/` — 글자 뒤 사진 |

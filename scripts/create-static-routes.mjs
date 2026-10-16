@@ -17,6 +17,8 @@ const routes = [
   'app/idphoto/support',
   'app/promptvault/privacy',
   'app/promptvault/support',
+  'app/geckonote/privacy',
+  'app/geckonote/support',
   'app/receiptcsv/privacy',
   'app/receiptcsv/support',
   'app/billform/privacy',
