@@ -22,15 +22,15 @@ export default function ParcelfitSupport() {
 
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <div className="mb-4">
-          <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">택배크기</span>
+          <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">택배 요금 비교·상자 측정</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">고객 지원</h1>
-        <p className="text-gray-500 text-sm mb-12">택배크기 · ParcelFit</p>
+        <p className="text-gray-500 text-sm mb-12">택배 요금 비교·상자 측정</p>
 
         <div className="space-y-8 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">앱 소개</h2>
-            <p className="text-gray-400">택배크기는 상자의 가로·세로·높이와 무게로 우체국 택배, GS25·CU 편의점택배와 반값택배의 크기 등급, 예상 요금, 접수 불가 여부를 보여 줍니다. 라이다가 있는 iPhone은 카메라로 모서리 네 곳을 찍어 재고, 줄자로 잰 값을 직접 넣어도 됩니다. 계정과 서버가 없고 모든 계산은 기기 안에서 이루어집니다.</p>
+            <p className="text-gray-400">이 앱은 상자의 가로·세로·높이와 무게로 우체국 택배, GS25·CU 편의점택배와 반값택배의 크기 등급, 예상 요금, 접수 불가 여부를 보여 줍니다. 라이다가 있는 iPhone은 카메라로 모서리 네 곳을 찍어 재고, 줄자로 잰 값을 직접 넣어도 됩니다. 계정과 서버가 없고 모든 계산은 기기 안에서 이루어집니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">사용 방법</h2>

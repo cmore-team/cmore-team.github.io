@@ -22,7 +22,7 @@ export default function ParcelfitPrivacy() {
 
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <div className="mb-4">
-          <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">택배크기</span>
+          <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">택배 요금 비교·상자 측정</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">개인정보 처리방침</h1>
         <p className="text-gray-500 text-sm mb-12">시행일: 2026년 10월</p>
@@ -30,7 +30,7 @@ export default function ParcelfitPrivacy() {
         <div className="space-y-8 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">한 줄 요약</h2>
-            <p className="text-gray-400">택배크기는 개인정보를 수집하지 않습니다. 서버와 계정이 없고, 측정·요금 판정·저장은 모두 사용자의 기기 안에서만 이루어집니다.</p>
+            <p className="text-gray-400">이 앱은 개인정보를 수집하지 않습니다. 서버와 계정이 없고, 측정·요금 판정·저장은 모두 사용자의 기기 안에서만 이루어집니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">수집하지 않는 정보</h2>
