@@ -63,6 +63,8 @@ const routes = [
   'app/minesweeper/share',
   'app/light-window/privacy',
   'app/light-window/support',
+  'app/parcelfit/privacy',
+  'app/parcelfit/support',
   'app/roomfit/privacy',
   'app/roomfit/support',
   'tools/app-icon-generator',

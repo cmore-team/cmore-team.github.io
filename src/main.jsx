@@ -59,6 +59,8 @@ import MinesweeperSupport from './pages/app/minesweeper/Support'
 import MinesweeperShare from './pages/app/minesweeper/Share'
 import LightWindowPrivacy from './pages/app/light-window/Privacy'
 import LightWindowSupport from './pages/app/light-window/Support'
+import ParcelfitPrivacy from './pages/app/parcelfit/Privacy'
+import ParcelfitSupport from './pages/app/parcelfit/Support'
 import RoomfitPrivacy from './pages/app/roomfit/Privacy'
 import RoomfitSupport from './pages/app/roomfit/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
@@ -130,6 +132,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/minesweeper/share" element={<MinesweeperShare />} />
         <Route path="/app/light-window/privacy" element={<LightWindowPrivacy />} />
         <Route path="/app/light-window/support" element={<LightWindowSupport />} />
+        <Route path="/app/parcelfit/privacy" element={<ParcelfitPrivacy />} />
+        <Route path="/app/parcelfit/support" element={<ParcelfitSupport />} />
         <Route path="/app/roomfit/privacy" element={<RoomfitPrivacy />} />
         <Route path="/app/roomfit/support" element={<RoomfitSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
