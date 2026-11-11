@@ -11,6 +11,10 @@ import LaborformSupport from './pages/app/laborform/Support'
 import CrosslinePrivacy from './pages/app/crossline/Privacy'
 import IdphotoPrivacy from './pages/app/idphoto/Privacy'
 import IdphotoSupport from './pages/app/idphoto/Support'
+import PromptvaultPrivacy from './pages/app/promptvault/Privacy'
+import PromptvaultSupport from './pages/app/promptvault/Support'
+import GeckonotePrivacy from './pages/app/geckonote/Privacy'
+import GeckonoteSupport from './pages/app/geckonote/Support'
 import ReceiptcsvPrivacy from './pages/app/receiptcsv/Privacy'
 import ReceiptcsvSupport from './pages/app/receiptcsv/Support'
 import BillformPrivacy from './pages/app/billform/Privacy'
@@ -52,10 +56,13 @@ import GiftpawPrivacy from './pages/app/giftpaw/Privacy'
 import GiftpawSupport from './pages/app/giftpaw/Support'
 import MinesweeperPrivacy from './pages/app/minesweeper/Privacy'
 import MinesweeperSupport from './pages/app/minesweeper/Support'
+import MinesweeperShare from './pages/app/minesweeper/Share'
 import LightWindowPrivacy from './pages/app/light-window/Privacy'
 import LightWindowSupport from './pages/app/light-window/Support'
 import ParcelfitPrivacy from './pages/app/parcelfit/Privacy'
 import ParcelfitSupport from './pages/app/parcelfit/Support'
+import RoomfitPrivacy from './pages/app/roomfit/Privacy'
+import RoomfitSupport from './pages/app/roomfit/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -77,6 +84,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/laborform/support" element={<LaborformSupport />} />
         <Route path="/app/idphoto/privacy" element={<IdphotoPrivacy />} />
         <Route path="/app/idphoto/support" element={<IdphotoSupport />} />
+        <Route path="/app/promptvault/privacy" element={<PromptvaultPrivacy />} />
+        <Route path="/app/promptvault/support" element={<PromptvaultSupport />} />
+        <Route path="/app/geckonote/privacy" element={<GeckonotePrivacy />} />
+        <Route path="/app/geckonote/support" element={<GeckonoteSupport />} />
         <Route path="/app/receiptcsv/privacy" element={<ReceiptcsvPrivacy />} />
         <Route path="/app/receiptcsv/support" element={<ReceiptcsvSupport />} />
         <Route path="/app/billform/privacy" element={<BillformPrivacy />} />
@@ -118,10 +129,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/giftpaw/support" element={<GiftpawSupport />} />
         <Route path="/app/minesweeper/privacy" element={<MinesweeperPrivacy />} />
         <Route path="/app/minesweeper/support" element={<MinesweeperSupport />} />
+        <Route path="/app/minesweeper/share" element={<MinesweeperShare />} />
         <Route path="/app/light-window/privacy" element={<LightWindowPrivacy />} />
         <Route path="/app/light-window/support" element={<LightWindowSupport />} />
         <Route path="/app/parcelfit/privacy" element={<ParcelfitPrivacy />} />
         <Route path="/app/parcelfit/support" element={<ParcelfitSupport />} />
+        <Route path="/app/roomfit/privacy" element={<RoomfitPrivacy />} />
+        <Route path="/app/roomfit/support" element={<RoomfitSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
