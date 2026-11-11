@@ -61,6 +61,10 @@ import LightWindowPrivacy from './pages/app/light-window/Privacy'
 import LightWindowSupport from './pages/app/light-window/Support'
 import ParcelfitPrivacy from './pages/app/parcelfit/Privacy'
 import ParcelfitSupport from './pages/app/parcelfit/Support'
+import WeightgraphPrivacy from './pages/app/weightgraph/Privacy'
+import WeightgraphSupport from './pages/app/weightgraph/Support'
+import LedboardPrivacy from './pages/app/ledboard/Privacy'
+import LedboardSupport from './pages/app/ledboard/Support'
 import RoomfitPrivacy from './pages/app/roomfit/Privacy'
 import RoomfitSupport from './pages/app/roomfit/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
@@ -134,6 +138,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/light-window/support" element={<LightWindowSupport />} />
         <Route path="/app/parcelfit/privacy" element={<ParcelfitPrivacy />} />
         <Route path="/app/parcelfit/support" element={<ParcelfitSupport />} />
+        <Route path="/app/weightgraph/privacy" element={<WeightgraphPrivacy />} />
+        <Route path="/app/weightgraph/support" element={<WeightgraphSupport />} />
+        <Route path="/app/ledboard/privacy" element={<LedboardPrivacy />} />
+        <Route path="/app/ledboard/support" element={<LedboardSupport />} />
         <Route path="/app/roomfit/privacy" element={<RoomfitPrivacy />} />
         <Route path="/app/roomfit/support" element={<RoomfitSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
