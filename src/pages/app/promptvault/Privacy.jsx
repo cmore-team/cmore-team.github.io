@@ -27,12 +27,12 @@ export default function PromptvaultPrivacy() {
           </span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">개인정보 처리방침</h1>
-        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 10월 (1.0.0)</p>
+        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 11월 (동의형 익명 사용 통계 추가)</p>
 
         <div className="space-y-8 text-gray-300 leading-relaxed">
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">한 줄 요약</h2>
-          <p className="text-gray-400">프롬프트와 사진은 이 기기에만 저장됩니다. 서버가 없고, 계정도 로그인도 없으며, 개발자는 어떤 개인정보도 수집하지 않습니다.</p>
+          <p className="text-gray-400">프롬프트와 사진은 이 기기에만 저장됩니다. 서버가 없고, 계정도 로그인도 없습니다. 사용자가 직접 켠 경우에만 이름·연락처가 없는 익명 사용 통계를 보냅니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">기기 안에만 저장되는 정보</h2>
@@ -42,7 +42,15 @@ export default function PromptvaultPrivacy() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">네트워크 요청</h2>
           <p className="text-gray-400">앱이 하는 유일한 네트워크 요청은 공개 프롬프트 팩 목록과 팩 파일을 <code>packs.cmore.dev</code>에서 받는 것입니다. 이 요청에는 쿠키, 기기 식별자, 사용자의 프롬프트나 사진이 포함되지 않습니다. 요청이 실패하면 앱에 들어 있는 팩을 그대로 사용합니다.</p>
-          <p className="text-gray-400">이 앱은 분석 SDK, 광고 SDK, 크래시 리포팅 SDK를 포함하지 않으며, 사용자를 추적하지 않습니다.</p>
+          <p className="text-gray-400">이 앱은 광고 SDK와 크래시 리포팅 SDK를 포함하지 않으며, 사용자를 추적하지 않습니다. 아래 익명 사용 통계에 동의하지 않으면 팩 받기 외의 네트워크 요청을 하지 않습니다.</p>
+          </section>
+          <section>
+            <h2 className="text-xl font-semibold text-white mb-3">익명 사용 통계 (PostHog, 동의 시에만)</h2>
+          <p className="text-gray-400">보관함 위 안내에서 &ldquo;보내기&rdquo;를 누르거나 설정의 &ldquo;익명 사용 통계 보내기&rdquo;를 켠 경우에만 통계 서비스 <a className="text-white underline" href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a>(미국 지역 서버)로 전송하며, 동의하지 않으면 아무것도 보내지 않습니다.</p>
+          <p className="text-gray-400"><strong className="text-white">보내는 것</strong> — 앱 실행, 프롬프트 복사(상세 화면·이 프롬프트로 만들기), 팩 담기(팩 이름과 개수), 구매 화면 열기, 팩·Pro 구매와 복원의 시작과 결과 같은 이벤트 종류와, 기기에서 무작위로 만든 통계용 ID(Apple 기기 식별자나 광고 식별자가 아님). PostHog 도구는 여기에 앱 버전, iOS 버전, 기기 모델, 화면 크기, 언어·시간대, 네트워크 종류(Wi-Fi·셀룰러)를 덧붙이고 기기에 자체 무작위 ID를 저장합니다. PostHog의 자동 수집, 화면 녹화, IP 기반 위치 확인은 꺼 두었습니다.</p>
+          <p className="text-gray-400"><strong className="text-white">보내지 않는 것</strong> — 프롬프트 제목·본문·메모, 사진, 컬렉션 이름, &ldquo;이 프롬프트로 만들기&rdquo;의 요청 문장, 이름·이메일 같은 개인 정보, 결제 수단 정보.</p>
+          <p className="text-gray-400">이 통계는 사용자 신원과 연결하지 않고(비연결), 다른 회사 데이터와 결합하거나 광고 추적에 쓰지 않습니다(비추적). 판매하지 않습니다.</p>
+          <p className="text-gray-400">설정에서 &ldquo;익명 사용 통계 보내기&rdquo;를 끄면 즉시 전송을 멈추고 기기의 통계용 ID(PostHog가 저장한 ID 포함)를 지웁니다. 다시 켜면 이전과 이어지지 않는 새 ID가 만들어집니다. 이미 보낸 통계의 보관은 PostHog의 처리 방식을 따릅니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">다른 앱으로 보내기</h2>

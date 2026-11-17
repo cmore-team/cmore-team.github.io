@@ -27,7 +27,7 @@ export default function AnzanPrivacy() {
           </span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm mb-12">Effective Date: September 6, 2026</p>
+        <p className="text-gray-500 text-sm mb-12">Effective Date: November 17, 2026</p>
 
         <div className="space-y-10 text-gray-400 leading-relaxed">
           <p>
@@ -107,8 +107,9 @@ export default function AnzanPrivacy() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
-                The iOS app has no ads, advertising SDK, IDFA or IDFV collection. Analytics is sent
-                through our own client, not through a third-party analytics SDK.
+                The iOS app has no ads, advertising SDK, IDFA or IDFV collection. TelemetryDeck events
+                are sent through our own client; the optional PostHog analytics described below uses
+                the PostHog SDK.
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
@@ -161,6 +162,28 @@ export default function AnzanPrivacy() {
               <div className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
                 <p className="text-sm">
+                  <strong className="text-white">PostHog</strong> (iOS usage analytics, US servers, only after you opt in) &mdash;
+                  the same usage events described above are also sent to PostHog, with the app name and a
+                  random hashed identifier created on your device (not an Apple or advertising identifier).
+                  The PostHog SDK adds the app version, OS version, device model, screen size, language,
+                  time zone, network type and its own random identifier. Automatic capture, session
+                  recording and IP-based location are turned off, and the data is not linked to your
+                  identity or used for tracking. Turning analytics off in Settings stops sending and deletes
+                  these identifiers on your device. See the{' '}
+                  <a
+                    href="https://posthog.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+                  >
+                    PostHog Privacy Policy
+                  </a>
+                  .
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
+                <p className="text-sm">
                   <strong className="text-white">Google Mobile Ads and User Messaging Platform (Android only)</strong>{' '}
                   &mdash; Android uses Google services for ads and consent choices. Depending on
                   consent and region, Google may process advertising identifiers, app and ad interactions,
@@ -187,7 +210,8 @@ export default function AnzanPrivacy() {
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
                 You can disable reminders in the app or notification permission in iOS Settings.
-                This does not disable analytics. The iOS app does not currently offer an analytics opt-out.
+                This does not disable analytics. iOS analytics is sent only after you choose to share it
+                on the Home card or in Settings, and you can turn it off there at any time.
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 shrink-0" />
