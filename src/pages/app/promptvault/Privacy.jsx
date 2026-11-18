@@ -41,7 +41,7 @@ export default function PromptvaultPrivacy() {
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">네트워크 요청</h2>
-          <p className="text-gray-400">앱이 하는 유일한 네트워크 요청은 공개 프롬프트 팩 목록과 팩 파일을 <code>packs.cmore.dev</code>에서 받는 것입니다. 이 요청에는 쿠키, 기기 식별자, 사용자의 프롬프트나 사진이 포함되지 않습니다. 요청이 실패하면 앱에 들어 있는 팩을 그대로 사용합니다.</p>
+          <p className="text-gray-400">앱은 공개 프롬프트 팩 목록과 팩 파일을 <code>packs.cmore.dev</code>에서 받습니다. 이 요청에는 쿠키, 기기 식별자, 사용자의 프롬프트나 사진이 포함되지 않습니다. 요청이 실패하면 앱에 들어 있는 팩을 그대로 사용합니다.</p>
           <p className="text-gray-400">이 앱은 광고 SDK와 크래시 리포팅 SDK를 포함하지 않으며, 사용자를 추적하지 않습니다. 아래 익명 사용 통계에 동의하지 않으면 팩 받기 외의 네트워크 요청을 하지 않습니다.</p>
           </section>
           <section>
