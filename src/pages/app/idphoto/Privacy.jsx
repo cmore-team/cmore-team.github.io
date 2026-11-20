@@ -27,7 +27,7 @@ export default function IdphotoPrivacy() {
           </span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">개인정보 처리방침</h1>
-        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 10월 (1.1.1 익명 사용 통계 반영)</p>
+        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 11월 (익명 사용 통계에 PostHog 추가)</p>
 
         <div className="space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -40,12 +40,12 @@ export default function IdphotoPrivacy() {
           <p className="text-gray-400">이 앱은 광고 SDK와 크래시 리포팅 SDK를 포함하지 않습니다. 아래 익명 사용 통계에 동의하지 않으면 어떠한 네트워크 요청도 하지 않으며, 비행기 모드에서도 모든 기능이 동작합니다.</p>
           </section>
           <section>
-            <h2 className="text-xl font-semibold text-white mb-3">익명 사용 통계 (TelemetryDeck, 동의 시에만)</h2>
-          <p className="text-gray-400">1.1.1부터 앱을 개선하기 위한 익명 사용 통계를 선택할 수 있습니다. 첫 화면 안내에서 &ldquo;보내기&rdquo;를 누르거나 설정의 &ldquo;익명 사용 통계 보내기&rdquo;를 켠 경우에만 통계 서비스 <a className="text-white underline" href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener noreferrer">TelemetryDeck</a>으로 전송하며, 동의하지 않으면 아무것도 보내지 않습니다.</p>
-          <p className="text-gray-400"><strong className="text-white">보내는 것</strong> — 앱 실행, 규격 선택(규격 이름), 사진 불러오기 방식(카메라·앨범), 저장·인화 시트·공유 완료, 구매 화면 열기, 구매·복원의 시작과 결과 같은 이벤트 종류와, 기기에서 무작위로 만든 통계용 ID(Apple 기기 식별자나 광고 식별자가 아님).</p>
+            <h2 className="text-xl font-semibold text-white mb-3">익명 사용 통계 (TelemetryDeck·PostHog, 동의 시에만)</h2>
+          <p className="text-gray-400">1.1.1부터 앱을 개선하기 위한 익명 사용 통계를 선택할 수 있습니다. 첫 화면 안내에서 &ldquo;보내기&rdquo;를 누르거나 설정의 &ldquo;익명 사용 통계 보내기&rdquo;를 켠 경우에만 통계 서비스 <a className="text-white underline" href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener noreferrer">TelemetryDeck</a>과 <a className="text-white underline" href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">PostHog</a>(미국 지역 서버)로 같은 내용을 전송하며, 동의하지 않으면 아무것도 보내지 않습니다.</p>
+          <p className="text-gray-400"><strong className="text-white">보내는 것</strong> — 앱 실행, 규격 선택(규격 이름), 사진 불러오기 방식(카메라·앨범), 저장·인화 시트·공유 완료, 구매 화면 열기, 구매·복원의 시작과 결과 같은 이벤트 종류와, 기기에서 무작위로 만든 통계용 ID(Apple 기기 식별자나 광고 식별자가 아님). PostHog 도구는 여기에 앱 버전, iOS 버전, 기기 모델, 화면 크기, 언어·시간대, 네트워크 종류(Wi-Fi·셀룰러)를 덧붙이고 기기에 자체 무작위 ID를 저장합니다. PostHog의 자동 수집, 화면 녹화, IP 기반 위치 확인은 꺼 두었고, 접속 IP 주소는 이벤트와 함께 저장하지 않도록 설정했습니다.</p>
           <p className="text-gray-400"><strong className="text-white">보내지 않는 것</strong> — 사진, 얼굴 위치·측정값, 파일 이름, 공유한 앱 이름, 이름·이메일 같은 개인 정보, 결제 수단 정보.</p>
           <p className="text-gray-400">이 통계는 사용자 신원과 연결하지 않고(비연결), 다른 회사 데이터와 결합하거나 광고 추적에 쓰지 않습니다(비추적). 판매하지 않습니다.</p>
-          <p className="text-gray-400">설정에서 &ldquo;익명 사용 통계 보내기&rdquo;를 끄면 즉시 전송을 멈추고 기기의 통계용 ID를 지웁니다. 다시 켜면 이전과 이어지지 않는 새 ID가 만들어집니다. 이미 보낸 통계의 보관은 TelemetryDeck의 처리 방식을 따릅니다.</p>
+          <p className="text-gray-400">설정에서 &ldquo;익명 사용 통계 보내기&rdquo;를 끄면 즉시 전송을 멈추고 기기의 통계용 ID(PostHog가 저장한 ID 포함)를 지웁니다. 다시 켜면 이전과 이어지지 않는 새 ID가 만들어집니다. 이미 보낸 통계의 보관은 TelemetryDeck과 PostHog의 처리 방식을 따릅니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">얼굴 데이터를 저장하지 않습니다</h2>
