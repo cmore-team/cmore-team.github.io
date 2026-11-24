@@ -71,6 +71,8 @@ const routes = [
   'app/ledboard/support',
   'app/roomfit/privacy',
   'app/roomfit/support',
+  'app/sealpad/privacy',
+  'app/sealpad/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

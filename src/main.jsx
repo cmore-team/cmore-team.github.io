@@ -67,6 +67,8 @@ import LedboardPrivacy from './pages/app/ledboard/Privacy'
 import LedboardSupport from './pages/app/ledboard/Support'
 import RoomfitPrivacy from './pages/app/roomfit/Privacy'
 import RoomfitSupport from './pages/app/roomfit/Support'
+import SealpadPrivacy from './pages/app/sealpad/Privacy'
+import SealpadSupport from './pages/app/sealpad/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -144,6 +146,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/ledboard/support" element={<LedboardSupport />} />
         <Route path="/app/roomfit/privacy" element={<RoomfitPrivacy />} />
         <Route path="/app/roomfit/support" element={<RoomfitSupport />} />
+        <Route path="/app/sealpad/privacy" element={<SealpadPrivacy />} />
+        <Route path="/app/sealpad/support" element={<SealpadSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
