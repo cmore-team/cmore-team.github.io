@@ -57,6 +57,8 @@ const routes = [
   'app/keepfew/support',
   'app/cleantuner/privacy',
   'app/cleantuner/support',
+  'app/offmemo/privacy',
+  'app/offmemo/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

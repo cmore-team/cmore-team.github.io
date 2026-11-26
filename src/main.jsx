@@ -53,6 +53,8 @@ import KeepfewPrivacy from './pages/app/keepfew/Privacy'
 import KeepfewSupport from './pages/app/keepfew/Support'
 import CleantunerPrivacy from './pages/app/cleantuner/Privacy'
 import CleantunerSupport from './pages/app/cleantuner/Support'
+import OffmemoPrivacy from './pages/app/offmemo/Privacy'
+import OffmemoSupport from './pages/app/offmemo/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -116,6 +118,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/keepfew/support" element={<KeepfewSupport />} />
         <Route path="/app/cleantuner/privacy" element={<CleantunerPrivacy />} />
         <Route path="/app/cleantuner/support" element={<CleantunerSupport />} />
+        <Route path="/app/offmemo/privacy" element={<OffmemoPrivacy />} />
+        <Route path="/app/offmemo/support" element={<OffmemoSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
