@@ -53,6 +53,8 @@ const routes = [
   'app/roomfit/support',
   'app/sealpad/privacy',
   'app/sealpad/support',
+  'app/keepfew/privacy',
+  'app/keepfew/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

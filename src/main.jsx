@@ -49,6 +49,8 @@ import RoomfitPrivacy from './pages/app/roomfit/Privacy'
 import RoomfitSupport from './pages/app/roomfit/Support'
 import SealpadPrivacy from './pages/app/sealpad/Privacy'
 import SealpadSupport from './pages/app/sealpad/Support'
+import KeepfewPrivacy from './pages/app/keepfew/Privacy'
+import KeepfewSupport from './pages/app/keepfew/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -108,6 +110,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/roomfit/support" element={<RoomfitSupport />} />
         <Route path="/app/sealpad/privacy" element={<SealpadPrivacy />} />
         <Route path="/app/sealpad/support" element={<SealpadSupport />} />
+        <Route path="/app/keepfew/privacy" element={<KeepfewPrivacy />} />
+        <Route path="/app/keepfew/support" element={<KeepfewSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
