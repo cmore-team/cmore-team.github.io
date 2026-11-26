@@ -59,6 +59,8 @@ const routes = [
   'app/cleantuner/support',
   'app/offmemo/privacy',
   'app/offmemo/support',
+  'app/linelens/privacy',
+  'app/linelens/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',

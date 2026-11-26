@@ -55,6 +55,8 @@ import CleantunerPrivacy from './pages/app/cleantuner/Privacy'
 import CleantunerSupport from './pages/app/cleantuner/Support'
 import OffmemoPrivacy from './pages/app/offmemo/Privacy'
 import OffmemoSupport from './pages/app/offmemo/Support'
+import LinelensPrivacy from './pages/app/linelens/Privacy'
+import LinelensSupport from './pages/app/linelens/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -120,6 +122,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/cleantuner/support" element={<CleantunerSupport />} />
         <Route path="/app/offmemo/privacy" element={<OffmemoPrivacy />} />
         <Route path="/app/offmemo/support" element={<OffmemoSupport />} />
+        <Route path="/app/linelens/privacy" element={<LinelensPrivacy />} />
+        <Route path="/app/linelens/support" element={<LinelensSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />
