@@ -51,6 +51,8 @@ import SealpadPrivacy from './pages/app/sealpad/Privacy'
 import SealpadSupport from './pages/app/sealpad/Support'
 import KeepfewPrivacy from './pages/app/keepfew/Privacy'
 import KeepfewSupport from './pages/app/keepfew/Support'
+import CleantunerPrivacy from './pages/app/cleantuner/Privacy'
+import CleantunerSupport from './pages/app/cleantuner/Support'
 import AppIconGenerator from './pages/tools/AppIconGenerator'
 import QrCodeGenerator from './pages/tools/QrCodeGenerator'
 import IconResizer from './pages/tools/IconResizer'
@@ -112,6 +114,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/app/sealpad/support" element={<SealpadSupport />} />
         <Route path="/app/keepfew/privacy" element={<KeepfewPrivacy />} />
         <Route path="/app/keepfew/support" element={<KeepfewSupport />} />
+        <Route path="/app/cleantuner/privacy" element={<CleantunerPrivacy />} />
+        <Route path="/app/cleantuner/support" element={<CleantunerSupport />} />
         <Route path="/tools/app-icon-generator" element={<AppIconGenerator />} />
         <Route path="/tools/qr-code-generator" element={<QrCodeGenerator />} />
         <Route path="/tools/icon-resizer" element={<IconResizer />} />

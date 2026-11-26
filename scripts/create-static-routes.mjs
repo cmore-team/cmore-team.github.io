@@ -55,6 +55,8 @@ const routes = [
   'app/sealpad/support',
   'app/keepfew/privacy',
   'app/keepfew/support',
+  'app/cleantuner/privacy',
+  'app/cleantuner/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
