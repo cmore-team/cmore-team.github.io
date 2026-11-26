@@ -23,7 +23,7 @@ export default function KeepfewPrivacy() {
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <div className="mb-4">
           <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">
-            사진솎기 · Keep Few
+            사진비우기 · Photo Tidy
           </span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">개인정보 처리방침 · Privacy Policy</h1>
@@ -36,7 +36,7 @@ export default function KeepfewPrivacy() {
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">사진·동영상 데이터는 어디로도 전송되지 않습니다</h2>
-            <p className="text-gray-400">사진솎기(Keep Few)는 사용자가 허용한 사진 보관함 항목을 Apple Vision 및 Accelerate 프레임워크로 기기 내부에서만 분석합니다. 분석 결과나 썸네일, 메타데이터는 개발자 서버나 제3자 서버로 전송되지 않습니다. 비행기 모드에서도 모든 정리 기능이 정상 작동합니다.</p>
+            <p className="text-gray-400">사진비우기(Photo Tidy)는 사용자가 허용한 사진 보관함 항목을 Apple Vision 및 Accelerate 프레임워크로 기기 내부에서만 분석합니다. 분석 결과나 썸네일, 메타데이터는 개발자 서버나 제3자 서버로 전송되지 않습니다. 비행기 모드에서도 모든 정리 기능이 정상 작동합니다.</p>
             <p className="text-gray-400 mt-3">앱에서 삭제를 확인한 사진·동영상은 영구 삭제되지 않고 iOS 사진 앱의 '최근 삭제된 항목'으로 이동하며, 30일 이내에 사진 앱에서 언제든 복원할 수 있습니다.</p>
           </section>
           <section>
@@ -58,7 +58,7 @@ export default function KeepfewPrivacy() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">Privacy Policy (English)</h2>
             <p className="text-gray-400">Your photos and videos never leave your device. Similar-photo clustering, blur detection, duplicate finding, month-by-month swipe triage, and batch cleanup all run 100% on-device using Apple PhotoKit, Vision, and Accelerate. There is no account, no cloud server, no ad SDK, and no analytics tracking. Core features work completely offline—even in Airplane Mode.</p>
-            <p className="text-gray-400 mt-3">Swipe progress, staging bin selections, monthly estimated space-saved history, and preferences are stored strictly locally on your iPhone or iPad via UserDefaults and removed if you uninstall the app. Photo Library access (full or Limited Access) is used solely to scan items you authorize and submit your confirmed deletions to iOS Recently Deleted (recoverable for 30 days in Apple Photos). One-time Pro purchases are processed exclusively by Apple via StoreKit—we never see or store payment details. Because Keep Few collects no personal data, it collects none from children either.</p>
+            <p className="text-gray-400 mt-3">Swipe progress, staging bin selections, monthly estimated space-saved history, and preferences are stored strictly locally on your iPhone or iPad via UserDefaults and removed if you uninstall the app. Photo Library access (full or Limited Access) is used solely to scan items you authorize and submit your confirmed deletions to iOS Recently Deleted (recoverable for 30 days in Apple Photos). One-time Pro purchases are processed exclusively by Apple via StoreKit—we never see or store payment details. Because Photo Tidy collects no personal data, it collects none from children either.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">문의 · Contact</h2>
