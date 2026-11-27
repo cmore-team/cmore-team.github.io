@@ -23,11 +23,11 @@ export default function IdphotoPrivacy() {
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-20">
         <div className="mb-4">
           <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-gray-400 border border-white/20 rounded-full">
-            증명사진 메이커
+            규격사진
           </span>
         </div>
         <h1 className="text-3xl md:text-4xl font-bold mb-2">개인정보 처리방침</h1>
-        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 11월 (익명 사용 통계에 PostHog 추가)</p>
+        <p className="text-gray-500 text-sm mb-12">시행일: 2026년 11월 (기기 내 선택적 임시 보관 및 익명 사용 통계 안내 반영)</p>
 
         <div className="space-y-8 text-gray-300 leading-relaxed">
           <section>
@@ -36,7 +36,7 @@ export default function IdphotoPrivacy() {
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">사진은 어디로도 전송되지 않습니다</h2>
-          <p className="text-gray-400">앱이 사진을 처리하는 모든 단계 — 얼굴 위치 측정, 배경 흰색 교체, 규격에 맞춘 잘라내기, 4x6 인화 시트 생성 — 는 Apple이 iOS에 내장한 Vision·Core Image 기능으로 기기 안에서 실행됩니다. 원본 사진도, 완성된 증명사진도 개발자의 서버나 제3자 서버로 업로드되지 않습니다.</p>
+          <p className="text-gray-400">앱이 사진을 처리하는 모든 단계 — 얼굴 위치 측정, 배경 흰색 교체, 노출·색온도 미세 조절, 규격에 맞춘 잘라내기, 4×6·L판·A4 인화 시트 및 온라인 접수용 JPEG 생성 — 는 Apple이 iOS에 내장한 Vision·Core Image 기능으로 기기 안에서 실행됩니다. 원본 사진도, 완성된 증명사진도 개발자의 서버나 제3자 서버로 업로드되지 않습니다.</p>
           <p className="text-gray-400">이 앱은 광고 SDK와 크래시 리포팅 SDK를 포함하지 않습니다. 아래 익명 사용 통계에 동의하지 않으면 어떠한 네트워크 요청도 하지 않으며, 비행기 모드에서도 모든 기능이 동작합니다.</p>
           </section>
           <section>
@@ -60,7 +60,8 @@ export default function IdphotoPrivacy() {
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">기기에 저장되는 정보</h2>
-          <p className="text-gray-400">구매 여부와 익명 사용 통계 동의 여부(동의한 경우 통계용 무작위 ID)만 기기에 저장됩니다. 사진은 저장하지 않습니다. 앱을 삭제하면 이 정보도 함께 삭제됩니다.</p>
+          <p className="text-gray-400">구매 여부와 익명 사용 통계 동의 여부(동의한 경우 통계용 무작위 ID)가 기기에 저장됩니다. 사진은 기본적으로 저장하지 않으며, 사용자가 검사 화면에서 직접 &ldquo;이 기기에 임시 보관&rdquo;을 선택한 사진만 최대 3장까지 기기 내부 저장소에 임시 보관됩니다.</p>
+          <p className="text-gray-400">임시 보관 사진은 iCloud 백업에서 제외되며 외부 서버로 전송되지 않습니다. 홈 화면에서 언제든 개별 삭제하거나 모두 삭제할 수 있고, 앱을 삭제하면 모든 정보가 함께 삭제됩니다.</p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">결제</h2>
