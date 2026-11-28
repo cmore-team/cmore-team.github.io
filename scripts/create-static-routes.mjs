@@ -61,6 +61,8 @@ const routes = [
   'app/offmemo/support',
   'app/linelens/privacy',
   'app/linelens/support',
+  'app/cutplan/privacy',
+  'app/cutplan/support',
   'tools/app-icon-generator',
   'tools/qr-code-generator',
   'tools/icon-resizer',
